@@ -198,7 +198,9 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("./assets/img/hero-bg.jpg") top center;
+  position: center;
+  background: url("../img/10164.webp") top center;
+  background-color: #050d18;
   background-size: cover;
 }
 #hero:before {
@@ -1025,14 +1027,6 @@ section {
   align-items: center;
   background: #1e1e1e;
   color: #fff;
-}
-
-#hero {
-  flex: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #f8f9fa;
 }
 
 .hero-container {
