@@ -432,6 +432,9 @@ section {
 @media (max-width: 768px) {
   .skills-logos {
     grid-template-columns: 1fr; /* One column on smaller screens */
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
