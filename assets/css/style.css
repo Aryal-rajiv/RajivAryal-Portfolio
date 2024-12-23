@@ -368,37 +368,73 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Akills
+# skills
 --------------------------------------------------------------*/
 .skills .progress {
   height: 60px;
   display: block;
   background: none;
   border-radius: 0;
+}#skills {
+  padding: 50px 0;
+  background: #f9f9f9;
 }
-.skills .progress .skill {
-  padding: 0;
-  margin: 0 0 6px 0;
-  text-transform: uppercase;
-  display: block;
-  font-weight: 600;
-  font-family: "Poppins", sans-serif;
-  color: #050d18;
+
+.skills-logos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* three logos per column */
+  gap: 60px; /* Space between the items */
+  justify-content: center;
+  align-items: center;
 }
-.skills .progress .skill .val {
-  float: right;
-  font-style: normal;
+
+.skills-logos .logo {
+  width: 250px; /* Fixed size for logos */
+  height: 150px; /* Fixed size for logos */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff; /* Optional: Add a background for contrast */
+  border-radius: 10px; /* Optional: Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better look */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.skills .progress-bar-wrap {
-  background: #dce8f8;
-  height: 10px;
+.skills-logos .logo:hover {
+  background-color: #def1f5;
 }
-.skills .progress-bar {
-  width: 1px;
-  height: 10px;
-  transition: 0.9s;
-  background-color: #149ddd;
+
+.skills-logos .logo img {
+  max-width: 80%;
+  max-height: 80%;
 }
+
+.skills-logos .logo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Floating Animation */
+.skills-logos .logo {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@media (max-width: 768px) {
+  .skills-logos {
+    grid-template-columns: 1fr; /* One column on smaller screens */
+  }
+}
+
 
 /*--------------------------------------------------------------
 # Resume
