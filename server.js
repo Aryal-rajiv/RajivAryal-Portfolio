@@ -1,11 +1,15 @@
 const express = require('express');
+
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 require('dotenv').config();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 const app = express();
+const cors = require ('cors');
+
 
 //Midedleware to parse form data
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true}));
 
 // Serve static to handle form submission

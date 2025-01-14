@@ -1,8 +1,5 @@
 /**
-* Template Name: iPortfolio - v3.7.0
-* Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
+*Kuch toh hai tujse raa bata..........
 */
 (function() {
   "use strict";
@@ -254,3 +251,7 @@
   });
 
 })()
+
+const app = require("../server.js"); 
+  
+module.exports = app;
