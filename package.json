@@ -1,0 +1,25 @@
+{
+  "name": "rajivaryal-portfolio",
+  "version": "1.0.0",
+  "description": "Its my portfolio website. Sole purpose of this site is to show my information",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aryal-rajiv/RajivAryal-Portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aryal-rajiv/RajivAryal-Portfolio/issues"
+  },
+  "homepage": "https://github.com/Aryal-rajiv/RajivAryal-Portfolio#readme",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "express": "^4.21.2",
+    "nodemailer": "^6.9.16"
+  }
+}
