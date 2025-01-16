@@ -3,10 +3,14 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 require('dotenv').config();
+
 const port = process.env.PORT || 5000;
 const app = express();
 const cors = require ('cors');
 
+
+//Serve static files from the public directory
+app.use(express.static(Path.join(__dirname, 'public')));
 
 //Midedleware to parse form data
 app.use(cors());
