@@ -252,6 +252,39 @@
 
 })()
 
-const app = require("../server.js"); 
-  
-module.exports = app;
+document.getElementById('contact-form').addEventListener('submit', async (e) => {
+  e.preventDefault(); // Prevent the default form submission
+
+  const form = e.target;
+  const formData = new FormData(form); // Get form data
+  const data = Object.fromEntries(formData.entries()); // Convert to JSON
+
+  // Show loading message
+  document.querySelector('.loading').style.display = 'block';
+  document.querySelector('.error-message').style.display = 'none';
+  document.querySelector('.sent-message').style.display = 'none';
+
+  try {
+    const response = await fetch('/submit-form', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data), // Send JSON data
+    });
+
+    if (response.ok) {
+      // Show success message
+      document.querySelector('.loading').style.display = 'none';
+      document.querySelector('.sent-message').style.display = 'block';
+      form.reset(); // Reset the form
+    } else {
+      throw new Error('Failed to submit form');
+    }
+  } catch (error) {
+    // Show error message
+    document.querySelector('.loading').style.display = 'none';
+    document.querySelector('.error-message').style.display = 'block';
+    console.error('Error:', error);
+  }
+});
