@@ -50,17 +50,21 @@ app.post('/submit-form', (req, res) =>{
         from: process.env.EMAIL_USER,
         to: process.env.YOUR_EMAIL,
         subject: `New message from${name}`,
-        text: `The uername is ${name} email is ${email} & subject is ${subject} and the message is ${message}`
+        text: `The uername is ${name} \n
+         email is ${email} \n
+          & subject is \n
+           ${subject} 
+           and the message is ${message}`
     };
 
     //Send email
     transporter.sendMail(mailoptions, (error, info) => {
         if (error){
             console.error('Error sending email:', error);
-            res.status(500).json({success: false, message: 'Error sending email' });
+           return res.status(500).json({success: false, message: 'Error sending email' });
         } else{
             console.log('Email sent:', info.response);
-            res.status(200).json({success:true, message: 'Email sent successfully'});
+           return res.status(200).json({success:true, message: 'Email sent successfully'});
         }
 
     });
