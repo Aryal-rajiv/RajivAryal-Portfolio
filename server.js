@@ -50,11 +50,7 @@ app.post('/submit-form', (req, res) =>{
         from: process.env.EMAIL_USER,
         to: process.env.YOUR_EMAIL,
         subject: `New message from${name}`,
-        text: `The uername is ${name} \n
-         email is ${email} \n
-          & subject is \n
-           ${subject} 
-           and the message is ${message}`
+        text: `Username: ${name} \n Email: ${email} \n Subject: ${subject} \n Message: ${message}`
     };
 
     //Send email
