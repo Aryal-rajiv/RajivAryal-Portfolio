@@ -14,6 +14,7 @@ app.use(express.static(Path.join(__dirname, 'public')));
 
 //Midedleware to parse form data
 app.use(cors());
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
 
 // Serve static to handle form submission
@@ -48,7 +49,7 @@ app.post('/submit-form', (req, res) =>{
     const mailoptions = {
         from: process.env.EMAIL_USER,
         to: process.env.YOUR_EMAIL,
-        subject: 'New message from${name}',
+        subject: `New message from${name}`,
         text: `The uername is ${name} email is ${email} & subject is ${subject} and the message is ${message}`
     };
 

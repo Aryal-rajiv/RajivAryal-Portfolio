@@ -253,17 +253,19 @@
 })()
 
 //Frontend for Email
-
 document.getElementById('contact-form').addEventListener('submit', async (e) => {
   e.preventDefault(); // Prevent the default form submission
 
   const formData = new FormData(e.target); // Get form data
   const data = Object.fromEntries(formData.entries()); // Convert to JSON
+  console.log("FormData:", data);
+
 
   // Show loading message
   document.querySelector('.loading').style.display = 'block';
   document.querySelector('.error-message').style.display = 'none';
   document.querySelector('.sent-message').style.display = 'none';
+
 
   try {
     const response = await fetch('/submit-form', {
@@ -272,8 +274,9 @@ document.getElementById('contact-form').addEventListener('submit', async (e) => 
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(data), // Send JSON data
+      
+
     });
-    
     const result = await response.json(); //Parse the JSON response
 
     if (result.success) {
@@ -281,7 +284,7 @@ document.getElementById('contact-form').addEventListener('submit', async (e) => 
       document.querySelector('.loading').style.display = 'none';
       document.querySelector('.sent-message').style.display = 'block';
       document.querySelector('.sent-message').textContent = result.message;
-      form.reset(); // Reset the form
+      e.target.reset(); // Reset the form
     } else {
       throw new Error(result.message);
     }
