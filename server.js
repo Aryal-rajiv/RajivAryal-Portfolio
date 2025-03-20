@@ -14,6 +14,7 @@ app.use(express.static(Path.join(__dirname, 'public')));
 
 //Midedleware to parse form data
 app.use(cors());
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
 
 // Serve static to handle form submission
@@ -48,18 +49,18 @@ app.post('/submit-form', (req, res) =>{
     const mailoptions = {
         from: process.env.EMAIL_USER,
         to: process.env.YOUR_EMAIL,
-        subject: 'New message from${name}',
-        text: `The uername is ${name} email is ${email} & subject is ${subject} and the message is ${message}`
+        subject: `New message from${name}`,
+        text: `Username: ${name} \n Email: ${email} \n Subject: ${subject} \n Message: ${message}`
     };
 
     //Send email
     transporter.sendMail(mailoptions, (error, info) => {
         if (error){
             console.error('Error sending email:', error);
-            res.status(500).json({success: false, message: 'Error sending email' });
+           return res.status(500).json({success: false, message: 'Error sending email' });
         } else{
             console.log('Email sent:', info.response);
-            res.status(200).send('Email sent successfully');
+           return res.status(200).json({success:true, message: 'Email sent successfully'});
         }
 
     });
