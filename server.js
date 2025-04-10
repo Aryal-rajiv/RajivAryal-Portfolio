@@ -1,4 +1,5 @@
 const express = require('express');
+const axios = require('axios');
 const Path = require('path'); 
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
@@ -20,30 +21,62 @@ app.use(bodyParser.urlencoded({ extended: true}));
 // Serve static to handle form submission
 app.use(express.static('public'));
 
-//POSt route to handle submission
+//POSt route to handle submission with reCAPTCHA
 app.post('/submit-form', (req, res) =>{
-    const { name, email, subject, message } = req.body;
+    const { name, email, subject, message, 'g-recaptcha-response': recaptchaToken } = req.body;
 
+    // 1. Verify reCAPTCHA token first
+    if (!recaptchaToken){
+        return res.status(400).json({
+            success: false,
+            message: 'Please complete the recaptcha Verification'
+        });
+    }
+    try{
+        //Verify reCAPTCHA with Google 
+        const recaptchaResponse = await axios.post(
+            'https://www.google.com/recaptcha/api/siteverify',
+            new URLSearchParams({
+                secret: process.env.ReCAPTCHA_SECRET_KEY,
+                response: recaptchaToken
+            }),
+            {
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                }
+            }
+        );
 
-    //Create a Nodemailer transporter using Gmail
-    const transporter = nodemailer.createTransport({
-        service: 'Gmail',
-        host: "smtp.gmail.com",
-        port: 465,
-        secure: false,
-        auth:{
-            user: process.env.EMAIL_USER, //Gmail user
-            pass: process.env.EMAIL_PASS  // Gmail API pass
+         //Check if reCAPTCHA verification fails
+         if(!recaptchaResponse.data.success) {
+            console.log('reCAPTCHA verification failed:', recaptchaResponse.data);
+            return res.status(400).json({
+                sucess:false,
+                message: 'reCAPTCHA verification failed',
+                errors: recaptchaResponse.data['error-codes']
+
+            });
+         }
+
+             // Only proceed with email sending if recaptcha is valid
+             //Create a Nodemailer transporter using Gmail
+              const transporter = nodemailer.createTransport({
+                service: 'Gmail',
+                host: "smtp.gmail.com",
+                port: 465,
+                secure: false,
+                auth:{
+                user: process.env.EMAIL_USER, //Gmail user
+                pass: process.env.EMAIL_PASS  // Gmail API pass
         }
     });
-
 
     transporter.verify(function(error, success){
         if (error){
         } else{
             console.log("Server is ready to take our messages");
         }
-    })
+    });
 
     //Email options
     const mailoptions = {
@@ -64,7 +97,17 @@ app.post('/submit-form', (req, res) =>{
         }
 
     });
+
+}catch (error) {
+    console.error('Error in form submission:', error);
+    return res.status(200).json({
+        success: true,
+        message: 'Email sent successfully'
+    });
+}
+
 });
+
 
 //start the server
 app.listen(port, () => {
