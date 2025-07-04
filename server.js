@@ -13,6 +13,13 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(express.static('public')); // or your folder name
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+
 //POSt route to handle submission with reCAPTCHA
 app.post("/submit-form", verifycaptcha, async(req, res) => {
   const { name, email, subject, message } = req.body;
