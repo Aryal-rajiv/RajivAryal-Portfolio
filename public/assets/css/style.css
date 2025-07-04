@@ -227,20 +227,15 @@ justify-content: center;
 --------------------------------------------------------------*/
 .about{
   height: 80vh;
-  background-image: url('assets/img/10164.webp');
-  background-size: cover;
   display: flex;
   align-items: center;
   position: relative;
-  overflow: hidden;;
 }
 
 
 .about .content {
   color: f0f0f0;
 }
-
-
 .about .content h3 {
   font-weight: 700;
   font-size: 1 rem;
@@ -270,6 +265,22 @@ justify-content: center;
   margin-bottom: 0;
 }
 
+@media screen and (max-width: 768px) {
+  .about{
+    height: auto;
+
+  }
+  .about .container .row .col-lg-4 img{
+    width: 100%;
+  }
+  .hero-content{
+  padding-bottom: 10px;
+}
+.about .content h3 {
+  padding-top: 20px;
+  
+}
+}
 
 /*--------------------------------------------------------------
 # skills
@@ -287,15 +298,15 @@ justify-content: center;
 
 .skills-logos {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* three logos per column */
-  gap: 60px; /* Space between the items */
+  grid-template-columns: repeat(4, 1fr); /* four logos per column */
+  gap: 30px; /* Space between the items */
   justify-content: center;
   align-items: center;
 }
 
 .skills-logos .logo {
-  width: 250px; /* Fixed size for logos */
-  height: 150px; /* Fixed size for logos */
+  width: 200px; /* Fixed size for logos */
+  height: 120px; /* Fixed size for logos */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -340,7 +351,7 @@ justify-content: center;
     align-items: center;
   }
   .skills-logos {
-    grid-template-columns: 1fr; /* One column on smaller screens */
+    grid-template-columns:repeat(2, 1fr); /* One column on smaller screens */
     justify-content: center;
     padding-left: 20px;
     padding-right: 20px;
@@ -506,7 +517,7 @@ justify-content: center;
 }
 .contact .info i {
   font-size: 20px;
-  color: #007bff;
+  color: #0265cf;
   float: left;
   width: 44px;
   height: 44px;
@@ -551,11 +562,11 @@ justify-content: center;
   margin-right: 10px;
 }
 .contact .info .social-links a:hover {
-  background: #007bff;
+  background: #005cd5;
   color: #fff;
 }
 .contact .info .email:hover i, .contact .info .address:hover i, .contact .info .phone:hover i {
-  background: #149ddd;
+  background: #017db7;
   color: #fff;
 }
 .contact .php-email-form {
