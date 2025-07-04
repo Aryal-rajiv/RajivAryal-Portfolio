@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
+const Path = require("path"); // Importing path module to handle file paths
 const verifycaptcha = require("./middleware/recaptchmiddleware");
 require("dotenv").config();
 
