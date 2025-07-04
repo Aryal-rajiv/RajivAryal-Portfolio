@@ -1,10 +1,3 @@
-/**
-* Template Name: iPortfolio - v3.7.0
-* Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -107,7 +100,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: 0.3s;
 }
 #header .profile .social-links a:hover {
-  background: #007bff;
+  background: #0b5ed7;
   color: #fff;
   text-decoration: none;
 }
@@ -192,68 +185,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
 }
 
-/*--------------------------------------------------------------
-# Hero Section
---------------------------------------------------------------*/
-#hero {
-  width: 100%;
-  height: 100vh;
-  position: center;
-  background-image: url("../img/10164.webp");
-  position:  relative;
-  background-color: #050d18;
-  background-size: cover;
-}
-#hero:before {
-  content: "";
-  background: rgba(5, 13, 24, 0.3);
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
-}
-#hero .hero-container {
-  position: relative;
-  z-index: 2;
-  min-width: 300px;
-}
-#hero h1 {
-  margin: 0 0 10px 0;
-  font-size: 64px;
-  font-weight: 700;
-  line-height: 56px;
-  color: #fff;
-}
-#hero p {
-  color: #fff;
-  margin-bottom: 50px;
-  font-size: 26px;
-  font-family: "Poppins", sans-serif;
-}
-#hero p span {
-  color: #fff;
-  padding-bottom: 4px;
-  letter-spacing: 1px;
-  border-bottom: 3px solid #0b5ed7;
-}
-@media (min-width: 1024px) {
-  #hero {
-    background-attachment: fixed;
-  }
-}
-@media (max-width: 768px) {
-  #hero h1 {
-    font-size: 28px;
-    line-height: 36px;
-  }
-  #hero h2 {
-    font-size: 18px;
-    line-height: 24px;
-    margin-bottom: 30px;
-  }
-}
+
 
 /*--------------------------------------------------------------
 # Sections General
@@ -276,29 +208,40 @@ section {
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
-  color: #173b6c;
-}
-.section-title h2::after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 50px;
-  height: 3px;
-  background: #0b5ed7;
-  bottom: 0;
-  left: 0;
 }
 .section-title p {
   margin-bottom: 0;
 }
 
+/* Hero Section  */
+.hero-content{
+justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top:20px;
+  padding-bottom: 50px;
+}
+
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
+.about{
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+
+.about .content {
+  color: f0f0f0;
+}
 .about .content h3 {
   font-weight: 700;
-  font-size: 26px;
-  color: #173b6c;
+  font-size: 1 rem;
+  color: f0f0f0;
+  padding-top: 2px;
+  
 }
 .about .content ul {
   list-style: none;
@@ -322,75 +265,48 @@ section {
   margin-bottom: 0;
 }
 
-/*--------------------------------------------------------------
-# Facts
---------------------------------------------------------------*/
-.facts {
-  padding-bottom: 30px;
+@media screen and (max-width: 768px) {
+  .about{
+    height: auto;
+
+  }
+  .about .container .row .col-lg-4 img{
+    width: 100%;
+  }
+  .hero-content{
+  padding-bottom: 10px;
 }
-.facts .count-box {
-  padding: 30px;
-  width: 100%;
+.about .content h3 {
+  padding-top: 20px;
+  
 }
-.facts .count-box i {
-  display: block;
-  font-size: 44px;
-  color: #149ddd;
-  float: left;
-  line-height: 0;
-}
-.facts .count-box span {
-  font-size: 48px;
-  line-height: 40px;
-  display: block;
-  font-weight: 700;
-  color: #050d18;
-  margin-left: 60px;
-}
-.facts .count-box p {
-  padding: 15px 0 0 0;
-  margin: 0 0 0 60px;
-  font-family: "Raleway", sans-serif;
-  font-size: 14px;
-  color: #122f57;
-}
-.facts .count-box a {
-  font-weight: 600;
-  display: block;
-  margin-top: 20px;
-  color: #122f57;
-  font-size: 15px;
-  font-family: "Poppins", sans-serif;
-  transition: ease-in-out 0.3s;
-}
-.facts .count-box a:hover {
-  color: #0b5ed7;
 }
 
 /*--------------------------------------------------------------
 # skills
 --------------------------------------------------------------*/
-.skills .progress {
-  height: 60px;
+.skills {
   display: block;
-  background: none;
+  background: #0d1117;
   border-radius: 0;
+  justify-content: center;
+  align-items: center;;
 }#skills {
   padding: 50px 0;
-  background: #f9f9f9;
+  color: #f0f0f0;
 }
 
 .skills-logos {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* three logos per column */
-  gap: 60px; /* Space between the items */
+  grid-template-columns: repeat(4, 1fr); /* four logos per column */
+  gap: 30px; /* Space between the items */
   justify-content: center;
   align-items: center;
 }
 
 .skills-logos .logo {
-  width: 250px; /* Fixed size for logos */
-  height: 150px; /* Fixed size for logos */
+  width: 200px; /* Fixed size for logos */
+  height: 120px; /* Fixed size for logos */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -430,8 +346,12 @@ section {
   }
 }
 @media (max-width: 768px) {
+  .skills{
+    justify-content: center;
+    align-items: center;
+  }
   .skills-logos {
-    grid-template-columns: 1fr; /* One column on smaller screens */
+    grid-template-columns:repeat(2, 1fr); /* One column on smaller screens */
     justify-content: center;
     padding-left: 20px;
     padding-right: 20px;
@@ -581,59 +501,7 @@ section {
   bottom: 0;
 }
 
-/*--------------------------------------------------------------
-# Portfolio Details
---------------------------------------------------------------*/
-.portfolio-details {
-  padding-top: 40px;
-}
-.portfolio-details .portfolio-details-slider img {
-  width: 100%;
-}
-.portfolio-details .portfolio-details-slider .swiper-pagination {
-  margin-top: 20px;
-  position: relative;
-}
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background-color: #fff;
-  opacity: 1;
-  border: 1px solid #149ddd;
-}
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #149ddd;
-}
-.portfolio-details .portfolio-info {
-  padding: 30px;
-  box-shadow: 0px 0 30px rgba(5, 13, 24, 0.08);
-}
-.portfolio-details .portfolio-info h3 {
-  font-size: 22px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #eee;
-}
-.portfolio-details .portfolio-info ul {
-  list-style: none;
-  padding: 0;
-  font-size: 15px;
-}
-.portfolio-details .portfolio-info ul li + li {
-  margin-top: 10px;
-}
-.portfolio-details .portfolio-description {
-  padding-top: 30px;
-}
-.portfolio-details .portfolio-description h2 {
-  font-size: 26px;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-.portfolio-details .portfolio-description p {
-  padding: 0;
-}
+
 
 /*--------------------------------------------------------------
 # Contact
@@ -649,7 +517,7 @@ section {
 }
 .contact .info i {
   font-size: 20px;
-  color: #007bff;
+  color: #0265cf;
   float: left;
   width: 44px;
   height: 44px;
@@ -694,11 +562,11 @@ section {
   margin-right: 10px;
 }
 .contact .info .social-links a:hover {
-  background: #007bff;
+  background: #005cd5;
   color: #fff;
 }
 .contact .info .email:hover i, .contact .info .address:hover i, .contact .info .phone:hover i {
-  background: #149ddd;
+  background: #017db7;
   color: #fff;
 }
 .contact .php-email-form {
@@ -872,6 +740,9 @@ section {
 
 
 /* This is for project section */
+.projects section-bg{
+   background-color: #0d1117;
+}
 .project-card {
     background-color: #1B2F45;
     color: white;
@@ -931,7 +802,7 @@ section {
 
 .header-hero-container {
   display: flex;
-  height: 100vh;
+  height: 90vh;
 }
 
 #header {
