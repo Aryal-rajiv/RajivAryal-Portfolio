@@ -12,12 +12,11 @@ const cors = require("cors");
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static('public'));
 
-app.use(express.static('public')); // or your folder name
+//Serve static files from the public directory
+app.use(express.static(Path.join(__dirname, 'public')));
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
 
 
 //POSt route to handle submission with reCAPTCHA
