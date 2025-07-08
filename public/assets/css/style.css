@@ -650,6 +650,10 @@ justify-content: center;
 .contact .php-email-form button[type=submit]:hover {
   background: #007bff;
 }
+.contact .g-recaptcha {
+  margin-top: 20px;
+  
+}
 @-webkit-keyframes animate-loading {
   0% {
     transform: rotate(0deg);
