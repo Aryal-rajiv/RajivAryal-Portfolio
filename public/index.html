@@ -537,6 +537,7 @@
               data-callback="OnCaptchaSuccess"
               data-expired-callback="OnCaptchaExpired"
               ></div>
+
                   
 
            <div class="text-center">
@@ -556,25 +557,17 @@
  
 <!-- Google recaptcha token sending to backend -->
   <script>
-  let captchaVerified = false;
-
-  function onCaptchaSuccess(token) {
-    captchaVerified = true;
-    // Optional: attach token to hidden input if not automatically handled
-    document.getElementById("contact-form").insertAdjacentHTML('beforeend',
-      `<input type="hidden" name="g-recaptcha-response" value="${token}">`
-    );
+  function onRecaptchaSuccess(token) {
+    document.getElementById('g-recaptcha-response').value = token;
   }
 
-  function onCaptchaExpired() {
-    captchaVerified = false;
-    const existingInput = document.querySelector('input[name="g-recaptcha-response"]');
-    if (existingInput) existingInput.remove();
+  function onRecaptchaExpired() {
+    document.getElementById('g-recaptcha-response').value = '';
   }
 
-  // Prevent submit if captcha not solved
   document.getElementById("contact-form").addEventListener("submit", function (e) {
-    if (!captchaVerified) {
+    const token = document.getElementById('g-recaptcha-response').value;
+    if (!token) {
       e.preventDefault();
       alert("Please complete the reCAPTCHA.");
     }
