@@ -5,8 +5,7 @@ const Path = require("path"); // Importing path module to handle file paths
 const verifycaptcha = require("./middleware/recaptchmiddleware");
 require("dotenv").config();
 
-const multer = require("multer");
-const upload = multer();
+
 const port = process.env.PORT;
 const app = express();
 const cors = require("cors");
@@ -23,7 +22,7 @@ app.use(express.static(Path.join(__dirname, 'public')));
 
 
 //POSt route to handle submission with reCAPTCHA
-app.post("/submit-form",upload.none(), verifycaptcha, async(req, res) => {
+app.post("/submit-form", verifycaptcha, async(req, res) => {
   const { name, email, subject, message } = req.body;
 
   try {
