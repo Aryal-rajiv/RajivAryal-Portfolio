@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 const verifycaptcha = async (req, res, next) => {
-  const captcha = req.body['g-recaptcha-response'];
+  const captcha = req.body['token'];
   if (!captcha) {
     return res.status(400).json({ message: 'Please complete the Recaptcha' });
   }

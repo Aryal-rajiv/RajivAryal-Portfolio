@@ -123,7 +123,7 @@
               <img src="assets/img/css-3.png" alt="CSS" />
           </div>
           <div class="logo" data-aos="zoom-in" data-aos-delay="200">
-            <img src="assets/img/c.png" alt="C/C++" />
+            <img src="assets/img/MongoDB.png" alt="MongoDB" />
           </div>
           <div class="logo" data-aos="zoom-in" data-aos-delay="300">
             <img src="assets/img/express-js.png" alt="Express" />
@@ -503,7 +503,7 @@
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form id="contact-form" action="/submit-form" method="post" role="form" class="php-email-form">
+            <form  class="contact-form">
 
               <div class="row">
                 <div class="form-group col-md-6">
@@ -528,20 +528,12 @@
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
-               <!-- Hidden input to hold the token -->
-              <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
 
               <!--recaptcha widget-->
               <div class="g-recaptcha" 
-              data-sitekey="6LeGTg4rAAAAAHQYeP4ZjOUfPKMATGBZxSa8Esvc"
-              data-callback="OnCaptchaSuccess"
-              data-expired-callback="OnCaptchaExpired"
-              ></div>
-
-                  
-
+              data-sitekey="6LfHeYUrAAAAACHKGZ6SRXkpunPlf3q2rDentZd6"></div>
            <div class="text-center">
-                <button type="submit" name="submit">Send Message</button>
+                <button type="submit" name="submit" >Send Message</button>
               </div>
             </form>
           </div>
@@ -551,28 +543,14 @@
       </div>
     </section><!-- End Contact Section -->
 
+
+    <!-- Script to submit form-->
+    <Script src="./assets/js/formScript.js"></Script>
+
   </main><!-- End #main -->
 
   <Footer> <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a></Footer>
- 
-<!-- Google recaptcha token sending to backend -->
-  <script>
-  function onRecaptchaSuccess(token) {
-    document.getElementById('g-recaptcha-response').value = token;
-  }
 
-  function onRecaptchaExpired() {
-    document.getElementById('g-recaptcha-response').value = '';
-  }
-
-  document.getElementById("contact-form").addEventListener("submit", function (e) {
-    const token = document.getElementById('g-recaptcha-response').value;
-    if (!token) {
-      e.preventDefault();
-      alert("Please complete the reCAPTCHA.");
-    }
-  });
-</script>
 
 
   <!-- Vendor JS Files -->
