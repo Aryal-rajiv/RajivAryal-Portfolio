@@ -252,12 +252,23 @@
 
 })()
 
-//Frontend for Email
+//Frontend for form submission with recaptcha
 document.getElementById('contact-form').addEventListener('submit', async (e) => {
   e.preventDefault(); // Prevent the default form submission
 
+  //Get recaptcha response
+  const recaptchaResponse = grecaptcha.getResponse();
+  if (!recaptchaResponse) {
+    document.querySelector('.error-message').style.display = 'block';
+    document.querySelector('.error-message').textContent = 'Please complete the reCAPTCHA';
+    return;
+  }
+ 
   const formData = new FormData(e.target); // Get form data
   const data = Object.fromEntries(formData.entries()); // Convert to JSON
+   //Add recaptcha response to form data
+  data['g-recaptcha-response'] = recaptchaResponse;
+
   console.log("FormData:", data);
 
 
@@ -294,5 +305,6 @@ document.getElementById('contact-form').addEventListener('submit', async (e) => 
     document.querySelector('.error-message').style.display = 'block';
     document.querySelector('.error-message').textContent = error.message;
     console.error('Error:', error);
+    grecaptcha.reset(); // Reset reCAPTCHA
   }
 });
