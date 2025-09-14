@@ -1,6 +1,43 @@
 # RajivAryal-Portfolio
-Its my portfolio website. Sole purpose of this site is to show my information
-index.html consist of all HTML code which build my single Page Appication
+It's my portfolio website. The sole purpose of this site is to show my information
+index.html consists of all the HTML code that builds my single-page application
 server.js for backend code backend code which handles form submission
-Noide mailer for smtp mail sending protocol
-Recaptcha middlewere to handle recaptcha
+Noide mailer for SMTP mail sending protocol
+Recaptcha middleware to handle recaptcha
+
+Perfect, Rajiv. Here's a clean, professional README structure for your **Portfolio Website** project. It highlights your use of HTML/CSS for the frontend and Express + Nodemailer for backend form handling—ideal for showcasing your full-stack capability in a simple, elegant way.
+
+🧰 Tech Stack
+- Frontend: HTML5, CSS3
+- Backend: Node.js, Express.js
+- Email Service: Nodemailer
+- Bot Protection: Google reCAPTCHA v2
+- Environment Config: doten
+
+🔐 Environment Variable
+PORT=3000
+EMAIL_USER=your@email.com
+EMAIL_PASS=yourEmailPassword
+EMAIL_RECEIVER=your@email.com
+RECAPTCHA_SECRET=yourGoogleRecaptchaSecretKey
+
+📬 Contact Form Workflow
+- Visitor fills out the contact form on the site.
+- Google reCAPTCHA verifies the user is human.
+- Form data is sent to the Express server via POST.
+- Server validates the reCAPTCHA token with Google’s API.
+- If valid, Nodemailer sends the email to my inbox.
+- User receives a success or error message.
+
+
+### 📌 Features
+
+- Responsive design for desktop and mobile
+- Clean, semantic HTML structure
+- Styled with modular CSS
+- Secure email handling with environment variables
+- Easy to deploy and customize
+
+---
+
+Let me know if you want to add a section for SEO, analytics, or deployment instructions. I can also help you scaffold a version with EJS or React if you ever want to upgrade the frontend.
