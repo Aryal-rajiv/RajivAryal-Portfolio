@@ -5,8 +5,6 @@ server.js for backend code backend code which handles form submission
 Noide mailer for SMTP mail sending protocol
 Recaptcha middleware to handle recaptcha
 
-Perfect, Rajiv. Here's a clean, professional README structure for your **Portfolio Website** project. It highlights your use of HTML/CSS for the frontend and Express + Nodemailer for backend form handling—ideal for showcasing your full-stack capability in a simple, elegant way.
-
 🧰 Tech Stack
 - Frontend: HTML5, CSS3
 - Backend: Node.js, Express.js
