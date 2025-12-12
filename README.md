@@ -1,5 +1,5 @@
 # RajivAryal-Portfolio
-It's my portfolio website. The sole purpose of this site is to show my information
+It's a portfolio website. The sole purpose of this site is to show my information
 index.html consists of all the HTML code that builds my single-page application
 server.js for backend code backend code which handles form submission
 Noide mailer for SMTP mail sending protocol
@@ -10,10 +10,10 @@ Recaptcha middleware to handle recaptcha
 - Backend: Node.js, Express.js
 - Email Service: Nodemailer
 - Bot Protection: Google reCAPTCHA v2
-- Environment Config: doten
+- Environment Config: dotenv
 
 🔐 Environment Variable
-PORT=3000
+PORT= Desirable port 
 EMAIL_USER=your@email.com
 EMAIL_PASS=yourEmailPassword
 EMAIL_RECEIVER=your@email.com
@@ -35,7 +35,3 @@ RECAPTCHA_SECRET=yourGoogleRecaptchaSecretKey
 - Styled with modular CSS
 - Secure email handling with environment variables
 - Easy to deploy and customize
-
----
-
-Let me know if you want to add a section for SEO, analytics, or deployment instructions. I can also help you scaffold a version with EJS or React if you ever want to upgrade the frontend.
