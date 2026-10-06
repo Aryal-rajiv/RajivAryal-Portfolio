@@ -1,31 +1,35 @@
 {
   "name": "rajivaryal-portfolio",
-  "version": "1.0.0",
-  "description": "Its my portfolio website. Sole purpose of this site is to show my information",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "version": "2.0.0",
+  "private": true,
+  "description": "Personal website and research journal of Rajiv Aryal. Next.js frontend with headless WordPress for research posts.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Aryal-rajiv/RajivAryal-Portfolio.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Aryal-rajiv/RajivAryal-Portfolio/issues"
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "tsc --noEmit"
   },
-  "homepage": "https://github.com/Aryal-rajiv/RajivAryal-Portfolio#readme",
+  "engines": {
+    "node": ">=20.9.0"
+  },
   "dependencies": {
-    "axios": "^1.8.4",
-    "body-parser": "^1.20.3",
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.7",
-    "express": "^4.21.2",
-    "express-async-handler": "^1.2.0",
-    "express-rate-limit": "^7.5.1",
-    "multer": "^2.0.1",
-    "nodemailer": "^6.10.0"
+    "next": "^16.3.8",
+    "nodemailer": "^10.0.15",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "sanitize-html": "^2.17.5",
+    "server-only": "^0.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "@types/nodemailer": "^8.0.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@types/sanitize-html": "^2.16.2",
+    "typescript": "^7.0.2"
   }
 }

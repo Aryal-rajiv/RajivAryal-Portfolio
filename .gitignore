@@ -1,3 +1,23 @@
-#the following list should not be tracked by git#
+# dependencies
+node_modules/
 
+# next.js
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+
+# env files
+.env
+.env*.local
 *.env
+
+# vercel
+.vercel
+
+# misc
+.DS_Store
+npm-debug.log*
+
+# local tooling
+.claude/
