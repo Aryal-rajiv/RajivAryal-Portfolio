@@ -80,6 +80,7 @@ export function Footer() {
           <a href={site.social.linkedin} rel="me noopener noreferrer" target="_blank">
             LinkedIn
           </a>
+          <a href={site.cv} download>CV</a>
           <a href={`mailto:${site.email}`}>Email</a>
         </nav>
       </div>

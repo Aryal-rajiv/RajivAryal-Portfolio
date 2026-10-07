@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Socials } from "@/components/Chrome";
 import { ContactForm } from "@/components/ContactForm";
-import { Arrow } from "@/components/Icons";
+import { Arrow, Download } from "@/components/Icons";
 import { NoPosts, PostCard } from "@/components/PostCard";
 import { achievements, education, experience, fellowships, leadership, participations, profile, projects, site, skills, type Role } from "@/lib/site";
 import { getPosts, isWordPressConfigured } from "@/lib/wordpress";
@@ -51,6 +51,9 @@ export default async function Home() {
                 <Link href="/#contact" className="btn btn-ghost">
                   Get in touch
                 </Link>
+                <a href={site.cv} className="btn btn-ghost" download="Rajiv-Aryal-CV.pdf" type="application/pdf">
+                  <Download /> Download CV
+                </a>
               </div>
               <Socials />
             </div>

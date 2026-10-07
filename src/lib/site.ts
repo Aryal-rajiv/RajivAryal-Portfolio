@@ -12,6 +12,7 @@ export const site = {
   phone: "+977 9860620334",
   location: "Ratnanagar-11, Chitwan, Nepal",
   locale: "en_US",
+  cv: "/Rajiv-Aryal-CV.pdf",
   keywords: [
     "Rajiv Aryal",
     "web systems research",
