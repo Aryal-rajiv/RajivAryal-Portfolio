@@ -1,0 +1,15 @@
+[
+  { "id": "sk-wordpress", "name": "WordPress", "icon": "/assets/img/wordpress.png" },
+  { "id": "sk-html", "name": "HTML", "icon": "/assets/img/html-5.png" },
+  { "id": "sk-css", "name": "CSS", "icon": "/assets/img/css-3.png" },
+  { "id": "sk-python", "name": "Python", "icon": "/assets/img/Python.jpg" },
+  { "id": "sk-mongodb", "name": "MongoDB", "icon": "/assets/img/MongoDB.png" },
+  { "id": "sk-numpy", "name": "NumPy", "icon": "/assets/img/Numpy.jpg" },
+  { "id": "sk-pandas", "name": "pandas", "icon": "/assets/img/Pandas.jpg" },
+  { "id": "sk-react", "name": "React", "icon": "/assets/img/react.webp" },
+  { "id": "sk-js", "name": "JavaScript", "icon": "/assets/img/JavaScript-Logo.png" },
+  { "id": "sk-node", "name": "Node.js", "icon": "/assets/img/node.png" },
+  { "id": "sk-express", "name": "Express", "icon": "/assets/img/express-js.png" },
+  { "id": "sk-rest", "name": "REST APIs", "icon": "/assets/img/rest.png" },
+  { "id": "sk-squarespace", "name": "Squarespace", "icon": "/assets/img/Squarespace-Logo.png" }
+]
