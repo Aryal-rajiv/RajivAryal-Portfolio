@@ -1,0 +1,162 @@
+[
+  {
+    "id": "exp-we-animals",
+    "type": "professional",
+    "role": "Security Consultant",
+    "organization": "We Animals",
+    "period": "Mar 2026 – Jun 2026",
+    "location": "",
+    "summary": "Designed and rolled out the organisation's security infrastructure, from passwordless sign-in to disaster recovery.",
+    "highlights": [
+      "Implemented passwordless authentication, credential management, endpoint protection and disaster-recovery workflows.",
+      "Deployed enterprise browser management, email authentication (DMARC) and web application firewall controls.",
+      "Wrote security playbooks, onboarding guides and operating procedures.",
+      "Ran awareness sessions on phishing prevention, authentication and backup practices."
+    ],
+    "url": ""
+  },
+  {
+    "id": "exp-anda",
+    "type": "professional",
+    "role": "Web Systems & Security Analyst",
+    "organization": "ANDA",
+    "period": "Jan 2026 – Apr 2026",
+    "location": "",
+    "summary": "Security-tested a Next.js and headless WordPress platform and hardened it.",
+    "highlights": [
+      "Identified application-security and performance gaps through analysis and testing.",
+      "Implemented CSP, HSTS and other HTTP security headers.",
+      "Documented the system to support maintainability and knowledge transfer."
+    ],
+    "url": "https://anda.jor.br/"
+  },
+  {
+    "id": "exp-faunalytics",
+    "type": "professional",
+    "role": "Research Library Web Publisher",
+    "organization": "Faunalytics",
+    "period": "Apr 2025 – Dec 2025",
+    "location": "",
+    "summary": "Turned research reports into accessible, web-ready resources for a public research library.",
+    "highlights": [
+      "Reviewed, formatted and published research articles with consistent editorial quality.",
+      "Worked with the Resource Library Manager to improve content organisation, usability and accessibility."
+    ],
+    "url": ""
+  },
+  {
+    "id": "exp-mangobyte",
+    "type": "professional",
+    "role": "WordPress & PHP Developer",
+    "organization": "Mangobyte Digital",
+    "period": "May 2024 – May 2025",
+    "location": "",
+    "summary": "Built reusable WordPress components and customised admin systems for client sites.",
+    "highlights": [
+      "Developed reusable JavaScript, CSS, PHP and WordPress components to simplify maintenance.",
+      "Ran technical audits, data extraction and performance analysis.",
+      "Customised administrative systems to improve usability for clients."
+    ],
+    "url": ""
+  },
+  {
+    "id": "exp-dmc",
+    "type": "professional",
+    "role": "WordPress Developer",
+    "organization": "DMC Marketing",
+    "period": "Jan 2024 – Apr 2024",
+    "location": "",
+    "summary": "Built and maintained fast, search-friendly WordPress websites alongside the SEO team.",
+    "highlights": [
+      "Optimised sites for speed, performance and search visibility.",
+      "Worked with the SEO team to apply on-page SEO techniques."
+    ],
+    "url": ""
+  },
+  {
+    "id": "exp-vegvoyages",
+    "type": "professional",
+    "role": "Website Manager",
+    "organization": "Vegan Travel Asia · VegVoyages Foundation",
+    "period": "Jan 2023 – Jan 2024",
+    "location": "Remote (Texas, USA)",
+    "summary": "Kept the organisation's websites and digital channels reliable and accessible.",
+    "highlights": [
+      "Maintained websites and communication systems, resolving issues and optimising reliability.",
+      "Supported advocacy outreach through Google Ads campaign management."
+    ],
+    "url": ""
+  },
+  {
+    "id": "exp-naxa",
+    "type": "professional",
+    "role": "Web GIS Intern",
+    "organization": "NAXA – Location Matters",
+    "period": "Apr 2022 – Jul 2022",
+    "location": "",
+    "summary": "Front-end development in React.js with API integration, plus back-end support.",
+    "highlights": [
+      "Built React.js features and integrated APIs.",
+      "Supported an Express.js and MongoDB back end.",
+      "Managed SEO metadata with React Helmet."
+    ],
+    "url": ""
+  },
+  {
+    "id": "exp-animal-rights-club",
+    "type": "community",
+    "role": "Secretary",
+    "organization": "Animal Rights Club",
+    "period": "2019 – Present",
+    "location": "Chitwan, Nepal",
+    "summary": "Organising awareness programmes and wildlife rescues for animal welfare and conservation in Nepal.",
+    "highlights": [
+      "Organised 40+ municipality and district-level awareness programmes for wild, companion, farm and working animals.",
+      "Ran animal-rights education programmes in 15+ schools in Chitwan.",
+      "Carried out 25 wildlife rescues from illegal zoos and private homes with Chitwan National Park and the Division Forest Office.",
+      "Lobbied local government to shut down illegal zoos."
+    ],
+    "url": ""
+  },
+  {
+    "id": "exp-krinjal",
+    "type": "community",
+    "role": "Python Programming Trainer",
+    "organization": "Krinjal Foundation / Techie Nepal / U.S. Embassy collaboration",
+    "period": "2021 – 2022",
+    "location": "",
+    "summary": "Taught Python and computational thinking to high-school students.",
+    "highlights": [
+      "Connected programming concepts to introductory Raspberry Pi projects."
+    ],
+    "url": ""
+  },
+  {
+    "id": "exp-bosc",
+    "type": "community",
+    "role": "Founding President",
+    "organization": "Birendra Open Source Club",
+    "period": "2021 – 2022",
+    "location": "",
+    "summary": "Co-founded an undergraduate open-source community.",
+    "highlights": [
+      "Organised Git/GitHub and Hacktoberfest workshops.",
+      "Mentored students in sustainable collaboration practices."
+    ],
+    "url": ""
+  },
+  {
+    "id": "exp-csitan",
+    "type": "community",
+    "role": "President",
+    "organization": "CSIT Association of Nepal – Chitwan",
+    "period": "2019 – 2022",
+    "location": "Chitwan, Nepal",
+    "summary": "Led student teams running workshops, hackathons and conferences.",
+    "highlights": [
+      "Organised district and state-level technology events.",
+      "Coordinated logistics, outreach and technical operations."
+    ],
+    "url": ""
+  }
+]

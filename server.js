@@ -4,31 +4,93 @@ const nodemailer = require("nodemailer");
 const Path = require("path"); // Importing path module to handle file paths
 const verifycaptcha = require("./middleware/recaptchmiddleware");
 require("dotenv").config();
+const rateLimit = require("express-rate-limit");
+const content = require("./lib/content");
+const { router: adminRouter, isProduction } = require("./lib/admin");
 
 
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 const app = express();
-const cors = require("cors");
+
+app.disable("x-powered-by");
+//On Vercel, requests come through its proxy; trust it so req.ip is the visitor's IP
+if (process.env.VERCEL) app.set("trust proxy", 1);
 
 //Midedleware to parse form data
-app.use(cors());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('public'));
+app.use(bodyParser.json({ limit: "200kb" }));
+app.use(bodyParser.urlencoded({ extended: true, limit: "200kb" }));
 
-//Serve static files from the public directory
-app.use(express.static(Path.join(__dirname, 'public')));
+//Security headers
+const csp = [
+  "default-src 'self'",
+  "script-src 'self' https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/",
+  "frame-src https://www.google.com/recaptcha/ https://recaptcha.google.com/recaptcha/",
+  "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+  "font-src 'self' https://fonts.gstatic.com",
+  "img-src 'self' data:",
+  "connect-src 'self'",
+  "object-src 'none'",
+  "base-uri 'self'",
+  "form-action 'self'",
+  "frame-ancestors 'self'",
+].join("; ");
+
+app.use((req, res, next) => {
+  res.setHeader("Content-Security-Policy", csp);
+  res.setHeader("X-Content-Type-Options", "nosniff");
+  res.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
+  res.setHeader("X-Frame-Options", "SAMEORIGIN");
+  res.setHeader("Permissions-Policy", "camera=(), microphone=(), geolocation=(), payment=()");
+  if (isProduction()) res.setHeader("Strict-Transport-Security", "max-age=63072000; includeSubDomains; preload");
+  next();
+});
+
+//The CMS page doesn't exist online
+app.use((req, res, next) => {
+  if (!/^\/admin(\.html)?\/?$/i.test(req.path)) return next();
+  if (isProduction()) return res.status(404).sendFile(Path.join(__dirname, "public", "404.html"));
+  res.setHeader("Cache-Control", "no-store");
+  next();
+});
+
+//Serve static files from the public directory (/projects -> projects.html, etc.)
+app.use(express.static(Path.join(__dirname, 'public'), { extensions: ["html"] }));
+
+//Public site content, managed through the CMS at /admin
+app.get("/api/content", (req, res) => {
+  res.set("Cache-Control", "no-store");
+  res.json(content.readAll());
+});
+
+//CMS API
+app.use("/api/admin", adminRouter);
 
 
+
+//Max 5 messages per visitor every 15 minutes
+const formLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  limit: 5,
+  message: { success: false, message: "Too many messages. Please try again later." },
+});
+
+//Field length limits
+const LIMITS = { name: 100, email: 254, subject: 200, message: 5000 };
 
 //POSt route to handle submission with reCAPTCHA
-app.post("/submit-form", verifycaptcha, async(req, res) => {
+app.post("/submit-form", formLimiter, verifycaptcha, async(req, res) => {
   const { name, email, subject, message } = req.body;
 
   try {
     // validate form data
     if (!name || !email || !subject || !message) {
       return res.status(400).json({ message: "All field are required" });
+    }
+
+    for (const [field, max] of Object.entries(LIMITS)) {
+      if (typeof req.body[field] !== "string" || req.body[field].length > max) {
+        return res.status(400).json({ message: `${field} is too long (max ${max} characters)` });
+      }
     }
 
     //Validate email format
@@ -61,7 +123,8 @@ app.post("/submit-form", verifycaptcha, async(req, res) => {
     const mailoptions = {
       from: process.env.EMAIL_USER,
       to: process.env.YOUR_EMAIL,
-      subject: `New message from${name}`,
+      replyTo: email,
+      subject: `New message from ${name.replace(/[\r\n]+/g, " ")}`,
       text: `Username: ${name} \n Email: ${email} \n Subject: ${subject} \n Message: ${message}`,
     };
 
@@ -81,14 +144,29 @@ app.post("/submit-form", verifycaptcha, async(req, res) => {
     });
   } catch (error) {
     console.error("Error in form submission:", error);
-    return res.status(200).json({
-      success: true,
+    return res.status(500).json({
+      success: false,
       message: "Error in form submission",
     });
   }
 });
 
-//start the server
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+//Unknown pages
+app.use((req, res) => {
+  res.status(404).sendFile(Path.join(__dirname, "public", "404.html"));
 });
+
+//start the server when run directly (Vercel imports the app instead)
+if (require.main === module) {
+  app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
+  }).on("error", (err) => {
+    if (err.code === "EADDRINUSE") {
+      console.error(`Port ${port} is already in use. Stop the other server (or change PORT in .env) and try again.`);
+      process.exit(1);
+    }
+    throw err;
+  });
+}
+
+module.exports = app;

@@ -1,3 +1,11 @@
 #the following list should not be tracked by git#
 
 *.env
+.env.*
+!.env.example
+node_modules/
+.next/
+next-env.d.ts
+tsconfig.tsbuildinfo
+.vercel/
+content/*.tmp

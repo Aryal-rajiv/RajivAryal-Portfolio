@@ -1,0 +1,139 @@
+[
+  {
+    "id": "proj-org-security",
+    "title": "Organisational Security & Backup Infrastructure",
+    "category": "Security",
+    "year": "2026",
+    "summary": "Security architecture for authentication, credentials, browser administration and backups for a nonprofit.",
+    "highlights": [
+      "Implemented passkeys, DMARC, centralised browser policies and recovery workflows.",
+      "Evaluated operational trade-offs and infrastructure resilience.",
+      "Produced documentation and operational frameworks for long-term maintenance."
+    ],
+    "tags": [
+      "Google Workspace",
+      "Passkeys",
+      "DMARC",
+      "Browser management"
+    ],
+    "url": "",
+    "repo": "",
+    "featured": true
+  },
+  {
+    "id": "proj-messenger-research",
+    "title": "Messenger Link Impersonation Research",
+    "category": "Research",
+    "year": "",
+    "summary": "Proof-of-concept investigating an impersonation risk in Messenger link previews, disclosed to Meta.",
+    "highlights": [
+      "Built a controlled proof of concept focused on user trust and authentication risk.",
+      "Documented methodology and findings and submitted them through Meta's Bug Bounty Program."
+    ],
+    "tags": [
+      "Node.js",
+      "Express.js",
+      "Responsible disclosure"
+    ],
+    "url": "",
+    "repo": "https://github.com/Aryal-rajiv/Messenger-bugbounty-research",
+    "featured": true
+  },
+  {
+    "id": "proj-ms-sso",
+    "title": "Microsoft Login Plugin for WordPress",
+    "category": "Open source",
+    "year": "",
+    "summary": "WordPress plugin adding single sign-on with Microsoft Azure AD.",
+    "highlights": [
+      "Implemented OAuth 2.0 authentication, token handling and API communication.",
+      "Adds a 'Login with Microsoft' button to the WordPress login page for all users."
+    ],
+    "tags": [
+      "PHP",
+      "OAuth 2.0",
+      "Microsoft Identity",
+      "WordPress"
+    ],
+    "url": "",
+    "repo": "https://github.com/Aryal-rajiv/Microsoft-Login-Plugin",
+    "featured": true
+  },
+  {
+    "id": "proj-anda",
+    "title": "ANDA Security Analysis",
+    "category": "Security",
+    "year": "2026",
+    "summary": "Security review and hardening of a Next.js and headless WordPress platform.",
+    "highlights": [
+      "Implemented CSP, HSTS and HTTP security headers.",
+      "Audited the system and wrote documentation for future development."
+    ],
+    "tags": [
+      "Next.js",
+      "Headless WordPress",
+      "Web security"
+    ],
+    "url": "https://anda.jor.br/",
+    "repo": "",
+    "featured": false
+  },
+  {
+    "id": "proj-impower",
+    "title": "ImPower Healthcare",
+    "category": "Client work",
+    "year": "",
+    "summary": "Mobile-first healthcare website, from UI/UX planning through deployment.",
+    "highlights": [
+      "Custom JavaScript features and third-party service integrations.",
+      "Fully responsive across desktop, tablet and mobile, delivered on a tight deadline."
+    ],
+    "tags": [
+      "WordPress",
+      "PHP",
+      "JavaScript",
+      "CSS"
+    ],
+    "url": "https://impowerhealthcare.com/",
+    "repo": "",
+    "featured": false
+  },
+  {
+    "id": "proj-lawtoolbox",
+    "title": "LawToolBox",
+    "category": "Client work",
+    "year": "",
+    "summary": "Complete redesign of an existing website while preserving all content and functionality.",
+    "highlights": [
+      "Recreated legacy features with custom CSS and JavaScript.",
+      "Built custom plugins and hand-coded pages for specific requirements."
+    ],
+    "tags": [
+      "WordPress",
+      "Custom plugins",
+      "JavaScript"
+    ],
+    "url": "https://lawtoolbox.com/",
+    "repo": "",
+    "featured": false
+  },
+  {
+    "id": "proj-myoffshorestaff",
+    "title": "MyOffshoreStaff",
+    "category": "Client work",
+    "year": "",
+    "summary": "Pixel-accurate Elementor build from Figma designs.",
+    "highlights": [
+      "Created and managed custom Elementor templates.",
+      "Added custom functionality with JavaScript and CSS."
+    ],
+    "tags": [
+      "WordPress",
+      "Elementor",
+      "Figma"
+    ],
+    "url": "https://myoffshorestaff.com.au/",
+    "repo": "",
+    "featured": false
+  }
+]
