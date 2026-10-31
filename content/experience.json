@@ -1,5 +1,20 @@
 [
   {
+    "id": "expe-3a26ff14",
+    "type": "professional",
+    "role": "Digital Infrastructure Specialist",
+    "organization": "Animal Advocacy & Food transition",
+    "period": "Aug 2026 - Present",
+    "location": "Remote",
+    "summary": "Translating advocacy and organizational needs into practical digital solutions.",
+    "highlights": [
+      "Complete website revamp, including UX/UI, content structure, development, and integrations.",
+      "Managing SEO, AI optimization (AIO), Google Analytics, Google campaigns, and mailing systems.",
+      "Translating advocacy and organizational needs into practical digital solutions."
+    ],
+    "url": "https://aa-ft.org/"
+  },
+  {
     "id": "exp-we-animals",
     "type": "professional",
     "role": "Security Consultant",
